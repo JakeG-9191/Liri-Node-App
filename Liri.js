@@ -4,13 +4,15 @@
 
 // var spotify = new spotify(keys.spotify);
 
-// Axios
+// Axios requirement
 var axios = require("axios");
+// Spotify Requirement
+var Spotify = require("node-spotify-api");
 
 var userRequest = (process.argv[2]);
 var userInput = process.argv.slice(3).join("+");
 
-console.log(userRequest);
+// console.log(userRequest);
 
 var movieInfo = "movie-this";
 var musicInfo = "spotify-this-song";
@@ -53,20 +55,10 @@ if (userRequest === concertInfo) {
     });
 };
 
-var Spotify = require("node-spotify-api");
-
 var spotify = new Spotify({
     id: "a0b5da83f264438dafbbb4588b8f0bb0",
     secret: "6c32133d6dfd4da8ad3ba56ac9aac4f2"
 });
-
-// if (userRequest === musicInfo) {
-//     spotify.search("https://api.spotify.com/v1/search?query=" + userInput + "&type=track&offset=20&limit=20").then(function(response){
-//         console.log(response)
-//     }).catch(function(error) {
-//         console.log(error)
-//     })
-// };
 
 if (userRequest === musicInfo) {
     spotify.search({
@@ -74,9 +66,17 @@ if (userRequest === musicInfo) {
         query: userInput,
         limit: 1,
         }).then(function (response) {
-            console.log(response.tracks);
-            console.log("-----------------")
-            console.log(response.tracks.items);
+            // console.log(response.tracks);
+            // console.log("-----------------")
+            // console.log(response.tracks.items[0]);
+            console.log("-------Artist Name----------")
+            console.log(response.tracks.items[0].artists[0].name);
+            console.log("-------Song Name----------")
+            console.log(response.tracks.items[0].name);
+            console.log("--------Preview URL---------")
+            console.log(response.tracks.items[0].preview_url);
+            console.log("--------Album Name---------")
+            console.log(response.tracks.items[0].album.name);
         })
         .catch(function (err) {
             console.log(err);
