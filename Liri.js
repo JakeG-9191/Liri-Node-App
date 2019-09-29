@@ -1,38 +1,12 @@
-// // API Keys
-// // Spotify
-// var Spotify = "a0b5da83f264438dafbbb4588b8f0bb0";
+// require("dotenv").config();
 
-// // Bands in Town
-// var BandsinTown = ""; 
-// (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`)
-
-// // OMDB
-// var omdb = "http://www.omdbapi.com/?i=tt3896198&apikey=f7c07097";
-
+var keys = require("./keys.js");
 // Axios
 var axios = require("axios");
 
-// // OMDB information
-// axios.get("http://www.omdbapi.com/?t=interstellar&y=&plot=short&apikey=trilogy").then(function(response){
-//     console.log(response.data);
-// }).catch(function(error) {
-//     if (error.response) {
-//         console.log(error.response.data);
-//     } else if (error.request) {
-//         console.log(error.request);
-//     } else {
-//         console.log("Error", error.message);
-//     }
-//     console.log(error.config);
-// });
-
-
-
-// requestAnimationFrame("dotenv").config();
-
-// var keys = require("./keys.js");
-
 // var spotify = new spotify(keys.spotify);
+
+// 
 
 var userRequest = (process.argv[2]);
 var userInput = process.argv.slice(3).join("+");
@@ -56,4 +30,18 @@ if (userRequest === movieInfo) {
         }
         console.log(error.config);
     }); 
-}
+};
+
+if (userRequest === concertInfo) {
+    axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response){
+        for (var i = 0; i < 5; i++) {
+            console.log("------------Next Event----------------")
+            console.log("Venue Name: " + response.data[i].venue.name)
+            console.log("Venue Country: " + response.data[i].venue.country)
+            console.log("Venue City: " + response.data[i].venue.city)
+            console.log("Concert Time: " + response.data[i].datetime)
+        };
+    }).catch(function(error) {
+        console.log(error)
+    });
+};
