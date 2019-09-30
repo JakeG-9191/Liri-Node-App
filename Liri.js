@@ -1,20 +1,24 @@
+// Require dotenv to be installed
 require("dotenv").config();
-
+// Grab necessary keys for Spotify from directory
 var keys = require("./keys.js");
-
 // Axios requirement
 var axios = require("axios");
 // Spotify Requirement
 var Spotify = require("node-spotify-api");
 
+// Define User Request and input for request
 var userRequest = (process.argv[2]);
 var userInput = process.argv.slice(3).join("+");
 // console.log(userRequest);
 
+// Provide defined user requests for application
 var movieInfo = "movie-this";
 var musicInfo = "spotify-this-song";
 var concertInfo = "concert-this";
 
+
+// Run Movie info (tied with OMDB) with correct search paramaters
 if (userRequest === movieInfo) {
     axios.get("http://www.omdbapi.com/?t=" + userInput + "&plot=short&apikey=trilogy").then(function (response) {
         console.log("-----------------Movie Info---------------")
@@ -38,6 +42,8 @@ if (userRequest === movieInfo) {
     });
 };
 
+
+// Run Concert Info (tied to BandsinTown) with correct search parameters
 if (userRequest === concertInfo) {
     axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function (response) {
         for (var i = 0; i < 5; i++) {
@@ -52,6 +58,8 @@ if (userRequest === concertInfo) {
     });
 };
 
+
+// Run Music Info (tied to Spotify) with correct search parameters
 var spotify = new Spotify(keys.spotify);
 
 if (userRequest === musicInfo) {
