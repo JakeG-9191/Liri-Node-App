@@ -66,7 +66,7 @@ var spotify = new Spotify(keys.spotify);
 if (userRequest === musicInfo) {
     spotify.search({
         type: "track", 
-        query: userInput,
+        query: userInput || "The Sign Ace of Base",
         limit: 1,
         }).then(function (response) {
             // console.log(response.tracks);
