@@ -1,8 +1,6 @@
-// require("dotenv").config();
+require("dotenv").config();
 
-// var keys = require("./keys.js");
-
-// var spotify = new spotify(keys.spotify);
+var keys = require("./keys.js");
 
 // Axios requirement
 var axios = require("axios");
@@ -11,7 +9,6 @@ var Spotify = require("node-spotify-api");
 
 var userRequest = (process.argv[2]);
 var userInput = process.argv.slice(3).join("+");
-
 // console.log(userRequest);
 
 var movieInfo = "movie-this";
@@ -55,10 +52,7 @@ if (userRequest === concertInfo) {
     });
 };
 
-var spotify = new Spotify({
-    id: "a0b5da83f264438dafbbb4588b8f0bb0",
-    secret: "6c32133d6dfd4da8ad3ba56ac9aac4f2"
-});
+var spotify = new Spotify(keys.spotify);
 
 if (userRequest === musicInfo) {
     spotify.search({
