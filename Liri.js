@@ -52,6 +52,7 @@ if (userRequest === concertInfo) {
             console.log("Venue Country: " + response.data[i].venue.country)
             console.log("Venue City: " + response.data[i].venue.city)
             console.log("Concert Time: " + response.data[i].datetime)
+            // console.log(moment())
         }
     }).catch(function (error) {
         console.log(error)
