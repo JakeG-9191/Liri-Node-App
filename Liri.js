@@ -19,7 +19,7 @@ var concertInfo = "concert-this";
 
 
 // Run Movie info (tied with OMDB) with correct search paramaters
-if (userRequest === movieInfo) {
+if (userRequest === movieInfo && userInput.length > 1) {
     axios.get("http://www.omdbapi.com/?t=" + userInput + "&plot=short&apikey=trilogy").then(function (response) {
         console.log("-----------------Movie Info---------------")
         console.log("Title: " + response.data.Title)
@@ -40,7 +40,28 @@ if (userRequest === movieInfo) {
         }
         console.log(error.config);
     });
-};
+} else if (userRequest === movieInfo && userInput.length < 1) {
+    axios.get("http://www.omdbapi.com/?t=Mr.+Nobody&plot=short&apikey=trilogy").then(function (response) {
+        console.log("-----------------Movie Info---------------")
+        console.log("Title: " + response.data.Title)
+        console.log("Release Year: " + response.data.Year)
+        console.log("IMDB Rating: " + response.data.Ratings[0].Value)
+        console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value)
+        console.log("Country of Production: " + response.data.Country)
+        console.log("Languages: " + response.data.Language)
+        console.log("Plot: " + response.data.Plot)
+        console.log("Actors: " + response.data.Actors)
+    }).catch(function (error) {
+        if (error.response) {
+            console.log(error.response.data);
+        } else if (error.request) {
+            console.log(error.request);
+        } else {
+            console.log("Error", error.message);
+        }
+        console.log(error.config);
+    });
+}
 
 
 // Run Concert Info (tied to BandsinTown) with correct search parameters
@@ -52,7 +73,7 @@ if (userRequest === concertInfo) {
             console.log("Venue Country: " + response.data[i].venue.country)
             console.log("Venue City: " + response.data[i].venue.city)
             console.log("Concert Time: " + response.data[i].datetime)
-            // console.log(moment())
+            console.log(moment())
         }
     }).catch(function (error) {
         console.log(error)
