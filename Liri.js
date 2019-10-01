@@ -14,14 +14,12 @@ var fs = require("fs");
 // Define User Request and input for request
 var userRequest = (process.argv[2]);
 var userInput = process.argv.slice(3).join("+");
-// console.log(userRequest);
 
 // Provide defined user requests for application
 var movieInfo = "movie-this";
 var musicInfo = "spotify-this-song";
 var concertInfo = "concert-this";
 var extraRequest = "do-what-it-says";
-
 
 // Run Movie info (tied with OMDB) with correct search paramaters, else defaults to Mr. Nobody
 if (userRequest === movieInfo && userInput.length > 1) {
@@ -180,3 +178,12 @@ if (userRequest === extraRequest) {
         }
     })
 };
+
+// This will create a permanent log that keeps records of all searches the user inputs and appends to the log.txt
+var loggedInfo = "\n------Next Search------\n" + userRequest + "\n" + userInput + "\n"
+
+fs.appendFile("log.txt", loggedInfo, function (error) {
+    if (error) {
+        console.log(error)
+    }
+});
