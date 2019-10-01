@@ -16,5 +16,5 @@ Finally, there is a function that logs all entries made by the user, this is fou
 
 Predefined Search Parameter | Results
 ------------ | -------------
-spotify-this-song| (/john-wick-club-scene-screengrab.jpg) Format: ![Alt Text](url)
+spotify-this-song| ![John Wick](/john-wick-club-scene-screengrab.jpg)Format: ![Alt Text](/john-wick-club-scene-screengrab.jpg)
 Content in the first column | Content in the second column
