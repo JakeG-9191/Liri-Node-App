@@ -71,7 +71,6 @@ if (userRequest === concertInfo) {
     axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function (response) {
         for (var i = 0; i < 5; i++) {
             var time = moment(response.data[i].datetime).format("L")
-
             console.log("\n------------Next Event----------------")
             console.log("Venue Name: " + response.data[i].venue.name)
             console.log("Venue Country: " + response.data[i].venue.country)
@@ -85,7 +84,6 @@ if (userRequest === concertInfo) {
 
 // Run Music Info (tied to Spotify) with correct search parameters, else defaults to Ace of Base, The Sign
 var spotify = new Spotify(keys.spotify);
-
 
 if (userRequest === musicInfo) {
     spotify.search({
