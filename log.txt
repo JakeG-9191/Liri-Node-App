@@ -37,3 +37,19 @@ click+clack+get+back
 ------Next Search------
 spotify-this-song
 slide+away
+
+------Next Search------
+spotify-this-song
+the+regulator
+
+------Next Search------
+concert-this
+clutch
+
+------Next Search------
+movie-this
+interstellar
+
+------Next Search------
+do-what-it-says
+
