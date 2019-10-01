@@ -16,7 +16,7 @@ Finally, there is a function that logs all entries made by the user, this is fou
 
 Predefined Search Parameter | Results
 ------------ | -------------
-spotify-this-song| ![Spotify Search](/images/spotify.jpg)Format: ![Spotify Search Function]()
-concert-this | ![Concert Search](/images/bandsintown.jpg)Format: ![Concert Search Function]()
-movie-this | ![Movie Search](/images/ombd.jpg)Format: ![Movie Search Function]()
-do-what-it-says | ![Do What It Says Search](/images/additional.jpg)Format: ![Additional Search Function]()
+spotify-this-song| ![Spotify Search](/images/spotify.JPG)Format: ![Spotify Search Function]()
+concert-this | ![Concert Search](/images/bandsintown.JPG)Format: ![Concert Search Function]()
+movie-this | ![Movie Search](/images/ombd.JPG)Format: ![Movie Search Function]()
+do-what-it-says | ![Do What It Says Search](/images/additional.JPG)Format: ![Additional Search Function]()
