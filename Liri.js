@@ -66,7 +66,6 @@ if (userRequest === movieInfo && userInput.length > 1) {
     });
 };
 
-
 // Run Concert Info (tied to BandsinTown) with correct search parameters
 if (userRequest === concertInfo) {
     axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function (response) {
@@ -83,7 +82,6 @@ if (userRequest === concertInfo) {
         console.log(error)
     });
 };
-
 
 // Run Music Info (tied to Spotify) with correct search parameters, else defaults to Ace of Base, The Sign
 var spotify = new Spotify(keys.spotify);
