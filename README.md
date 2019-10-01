@@ -11,3 +11,10 @@ If the user fails to enter thier own search terms after the pre-defined search i
 The final pre-defined search paramter, "do-what-it-says", will search for text within a random.txt file and perform the desired search based on the text. By default, this is set to use the pre-defined search parameter "spotify-this-song" with an additional search of "I want it That Way". This text can be changed by the user, and within the command line they can run "do-what-it-says" for new information.
 
 Finally, there is a function that logs all entries made by the user, this is found within the Log.txt file. Each predefined search parameter, as well as those additional search parameters provided by users, is stored in a cohesive format within this file. 
+
+# Screenshots and Additional Information
+
+Predefined Search Parameter | Results
+------------ | -------------
+spotify-this-song| (/john-wick-club-scene-screengrab.jpg) Format: ![Alt Text](url)
+Content in the first column | Content in the second column
